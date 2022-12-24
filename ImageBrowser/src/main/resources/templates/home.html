@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{./vircss.css}"/>
+
+</head>
+<body>
+<br><br><br><br>
+<div class = "welcome">
+</h1> Welcome <span sec:authentication="name">Username</span> to the homepage of the picture </h1>
+    <br>
+    <h3> browsing webapp! </h3>
+</div>
+<br> <br> <br>
+
+<div class = "welcome">
+
+</h1> Your role is:  <span sec:authentication="principal.authorities">Role</span> </h1>
+
+</div>
+
+<br><br><br><br>
+
+
+<table id="table7">
+    <thead>
+    <tr>
+        <td class="tg-0lax">
+
+            <form name="logout" th:action="@{/logout}" method="post">
+                <input type="submit" value="Sign out"/>
+            </form>
+
+        </td>
+    </tr>
+    </thead>
+</table>
+
+<br><br><br><br>
+
+<div class = "center">
+<div sec:authorize="hasAuthority('ADMIN')">
+    <table id= "table" border="4" cellpadding="5">
+        <thead>
+        <tr>
+
+            <th>Username</th>
+            <th>Role</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.role}"></td>
+            <td>
+                <a th:href="@{'/edit/' + ${user.id}}">Edit</a>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+<br><br><br><br>
+
+<div sec:authorize="hasAnyAuthority('JPG', 'JPG_WEBP','PNG_JPG_WEBP','PNG_JPG_GIF', 'JPG_GIF', 'PNG_JPG',  'ADMIN')">
+
+    <table id="table8">
+        <thead>
+        <tr>
+            <td class="tg-0lax">
+                <h3>JPG Pictures</h3>
+            </td>
+        </tr>
+        </thead>
+    </table>
+
+    <br><br>
+
+    <table id= "table2">
+        <thead>
+        <tr>
+            <th class="tg-0lax">    <img src="./JPG/1190216.jpg" alt="arg" style="width:800px;height:600px;" class="center" ><br>
+            </th>
+            <th class="tg-0lax">    <img src="./JPG/england.jpg" alt="engr" style="width:800px;height:600px;" class="center" ><br>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="tg-0lax">    <img src="./JPG/hungarian-national-team-football.jpg" alt="hun" style="width:800px;height:600px;"class="center"><br>
+            </td>
+            <td class="tg-0lax">    <img src="./JPG/spain.jpg" alt="hun" style="width:800px;height:600px;"class="center"><br>
+            </td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">    <img src="./JPG/uruguay.jpg" alt="hun" style="width:800px;height:600px;"class="center"><br>
+            </td>
+            <td class="tg-0lax"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+<br><br><br><br>
+
+<div sec:authorize="hasAnyAuthority('PNG','PNG_GIF', 'PNG_WEBP', 'PNG_JPG', 'PNG_JPG_WEBP', 'PNG_GIF_WEBP', 'PNG_JPG_GIF', 'ADMIN')">
+
+
+    <table id="table9">
+        <thead>
+        <tr>
+            <td class="tg-0lax">
+                <h3>PNG Pictures</h3>
+            </td>
+        </tr>
+        </thead>
+    </table>
+
+    <table id = "table3">
+        <thead>
+        <tr>
+            <th class="tg-0lax">    <img src="./PNG/araujo.png" alt="araujo" style="width:500px;height:600px;"class="center"><br>
+            </th>
+            <th class="tg-0lax">    <img src="./PNG/Balde.png" alt="Balde" style="width:500px;height:600px;"class="center"><br>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="tg-0lax">    <img src="./PNG/De_jong.png" alt="De jong" style="width:500px;height:600px;"class="center"><br>
+            </td>
+            <td class="tg-0lax">    <img src="./PNG/Fati.png" alt="Fati" style="width:500px;height:600px;"class="center"><br>
+            </td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">    <img src="./PNG/Ferran.png" alt="Ferran" style="width:500px;height:600px;"class="center"><br>
+            </td>
+            <td class="tg-0lax">    <img src="./PNG/gavi.png" alt="gavi" style="width:500px;height:600px;"class="center"><br>
+            </td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">    <img src="./PNG/kounde.png" alt="kounde" style="width:500px;height:600px;"class="center"><br>
+            </td>
+            <td class="tg-0lax">    <img src="./PNG/Lionel-Messi.png" alt="Lionel-Messi" style="width:500px;height:600px;"class="center"><br>
+            </td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">    <img src="./PNG/pedri-34.png" alt="pedri" style="width:500px;height:600px;"class="center"><br>
+            </td>
+            <td class="tg-0lax"></td>
+        </tr>
+        </tbody>
+    </table>
+
+
+
+</div>
+<br><br><br><br>
+<div sec:authorize="hasAnyAuthority('GIF', 'PNG_GIF','JPG_GIF', 'GIF_WEBP', 'PNG_JPG_WEBP', 'PNG_GIF_WEBP', 'ADMIN')">
+    <table id="table10">
+        <thead>
+        <tr>
+            <td class="tg-0lax">
+                <h3>GIF Pictures</h3>
+            </td>
+        </tr>
+        </thead>
+    </table>
+    <br><br>
+
+    <table id= "table4">
+        <thead>
+        <tr>
+            <th class="tg-0lax">    <img src="./GIF/messi1.gif" alt="Messi1" style="width:500px;height:600px;"class="center"><br>
+            </th>
+            <th class="tg-0lax">    <img src="./GIF/messi2.gif" alt="Messi2" style="width:500px;height:600px;"class="center"><br>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="tg-0lax">    <img src="./GIF/messi3.gif" alt="Messi3" style="width:500px;height:600px;"class="center"><br>
+            </td>
+            <td class="tg-0lax">    <img src="./GIF/messi4.gif" alt="Messi4" style="width:500px;height:600px;"class="center"><br>
+            </td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">    <img src="./GIF/messi5.gif" alt="Messi5" style="width:500px;height:600px;"class="center"><br>
+            </td>
+            <td class="tg-0lax">    <img src="./GIF/messi6.gif" alt="Messi6" style="width:500px;height:600px;"class="center"><br>
+            </td>
+        </tr>
+        <tr>
+            <td class="tg-0lax">    <img src="./GIF/messi7.gif" alt="Messi7" style="width:500px;height:600px;"class="center"><br>
+            </td>
+            <td class="tg-0lax"></td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+<br><br><br><br>
+<div sec:authorize="hasAnyAuthority('WEBP','PNG_WEBP', 'JPG_WEBP', 'GIF_WEBP', 'PNG_GIF_WEBP', 'PNG_JPG_WEBP', 'ADMIN')">
+    <table id="table11">
+        <thead>
+        <tr>
+            <td class="tg-0lax">
+                <h3>WEBP Pictures</h3>
+            </td>
+        </tr>
+        </thead>
+    </table>
+    <br><br>
+
+    <table id = "table5">
+        <thead>
+        <tr>
+            <th class="tg-0lax">    <img src="./WEBP/GettyImages-1243560834.webp" alt="Messi11" style="width:500px;height:600px;"class="center"><br>
+            </th>
+            <th class="tg-0lax">    <img src="./WEBP/Lionel-Messi-Barcelona-jpg.webp" alt="Messi22" style="width:500px;height:600px;"class="center"><br>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="tg-0lax">    <img src="./WEBP/Lionel_Messi_PSG-OGC_Nice_2022-10-01.webp" alt="Messi33" style="width:500px;height:600px;"class="center"><br>
+            </td>
+            <td class="tg-0lax"></td>
+        </tr>
+
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>

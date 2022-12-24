@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+}
+
+
+
+
+body {
+    font-family: "Arial Narrow", sans-serif;
+    line-height: 0.5;
+    background-color: rgba(192, 192, 192, 0.87);
+
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+
+#table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#table2 {
+    margin-left: auto;
+    margin-right: auto;
+    border: 0;
+}
+#table3 {
+    margin-left: auto;
+    margin-right: auto;
+}
+#table4 {
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+#table4 {
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+#table5 {
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+#table6 {
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+#table7 {
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+#table8 {
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+#table9 {
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+#table10 {
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+#table11 {
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#table td, #table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+
+#table tr:hover {background-color: #ddd;}
+
+#table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #04AA6D;
+    color: white;
+}
+
+input[type=submit]{
+    background-color: rgb(4, 170, 109);
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.edit-butt{
+    background: none;
+    padding: 1em;
+    font-weight: 500;
+    border: 2px #04aa6d solid;
+    border-radius: 6px;
+    font-size: 2.5rem;
+    color: #414141;
+}
+.welcome{
+    font-family: "Arial Black", sans-serif;
+    font-size: 27px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+
+#tg_pics {
+    border: 2px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+

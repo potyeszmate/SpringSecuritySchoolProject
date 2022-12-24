@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+    <link rel="stylesheet" th:href="@{./logincss.css}"/>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <!--Stylesheet-->
+
+</head>
+
+<body>
+
+<div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+
+
+<form method="post" th:action="@{/login}">
+
+    <div th:if="${param.error}">
+      <div class="center">
+        Wrong username or password!
+      </div>
+    </div>
+
+
+    <form>
+      <h3>Log in to the webapp</h3>
+      <label for="usern" class="input-label">Username</label>
+      <input class="input" id="usern" type="text" name="username" placeholder="Username"/> <br>
+
+      <label for="passw" class="input-label">Password</label>
+      <input class="input" id="passw" type="password" name="password" placeholder="Password"/>
+
+      <button type="submit" class="action-button">Log In</button> <br>
+
+    </form>
+
+</form>
+
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>error</title>
+    <link rel="stylesheet" th:href="@{./vircss.css}"/>
+
+</head>
+<body>
+<h1>Something went wrong. Please go back to the homepage or sign out.</h1>
+<br>
+<div class="submitbtn">
+    <form name="logout" th:action="@{/home}" method="post">
+        <input type="submit" value="home"/>
+    </form>
+</div>
+<br><br>
+<div class="submitbtn">
+    <form name="logout" th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign out"/>
+    </form>
+</div>
+
+
+
+</body>
+</html>
